@@ -45,9 +45,43 @@ pizzas.forEach(function(pizza){
       <h5 class="card-title">${pizza.name}</h5>
       <p class="card-text"> KSH ${pizza.price}</p>
       <p class="card-text">${pizza.ingredients}</p>
-      <a href="#" class="btn btn-warning rounded">ADD TO CART</a>
+      <a href="#" id="btn" onclick="addToCart()" class="btn btn-warning rounded">ADD TO CART</a>
     </div>
   </div>
  </div>`
   document.getElementsByClassName("row")[0].innerHTML += pizzaItem;
   });
+ 
+  var orderButtons = document.getElementById("btn");
+  
+  for (var i = 0; i < orderButtons.length; i++){
+    orderButtons[i].addEventListener('click', () =>{
+      // cartNumbers();
+      console.log('hello');
+      // var itemId= this.getElementById("btn");
+      // var clickedPizza = pizzas.find(function (pizza) {
+      //   return pizza.id == itemId;
+       
+      // });
+    });
+  }
+var cartNumbers = () => {
+  var pizzaNumbers=localStorage.getItem("cartNumbers");
+  pizzaNumbers = parseInt("cartNumbers");
+  if(pizzaNumbers){
+    localStorage.setItem("cartNumbers", pizzaNumbers + 1);
+  }else{
+    localStorage.setItem("cartNumber", 1);
+  }
+  
+}
+var cart =[];
+var addToCart= (id)=>{
+const item = pizzas.find((pizza)=> pizza.id===id);
+
+cart.push({
+  ...item,
+  numberOfUnits:1,
+})
+// updateCart();
+}
