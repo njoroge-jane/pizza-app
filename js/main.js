@@ -42,8 +42,15 @@ var pizzas = [
     price: 950,
   },
 ];
+window.addEventListener("DOMContentLoaded",function(){
 
-pizzas.forEach(function (pizza) {
+pizzas.forEach((pizz)=>{
+  console.log("hello");
+})
+console.log(document.getElementById("rowa"));
+console.log(document.querySelector(".row"));
+
+pizzas.forEach((pizza)=>{
   var pizzaItem = ` <div class="col-md-4 pt-5">
   <div class="card mh-100 container-fluid shadow text-center">
     <img src="${pizza.image}" class="card-img-top img-fluid" alt="...">
@@ -55,7 +62,12 @@ pizzas.forEach(function (pizza) {
     </div>
   </div>
  </div>`;
-  document.getElementsByClassName("row")[0].innerHTML += pizzaItem;
+  
+ console.log(document.getElementById("rowa"));
+  document.getElementById("rowa").innerHTML += pizzaItem;
+
+
+ 
 });
 
 var orderButtons = document.querySelectorAll(".add");
@@ -80,8 +92,8 @@ document.querySelectorAll(".add").forEach((buttonOrder) => {
 //     // });
 //   });
 // }
-var cartNumbers = (pizza) => {
-  console.log('hey' + pizza)
+var cartNumbers = () => {
+ 
   var pizzaNumbers = localStorage.getItem("cartNumbers");
 
   pizzaNumbers = parseInt(pizzaNumbers);
@@ -94,13 +106,78 @@ var cartNumbers = (pizza) => {
   }
 };
 
-var cart = [];
-var addToCart = (id) => {
-  const item = pizzas.find((pizza) => pizza.id === id);
+var setItems=(pizza)=>{
+  var cartItem = localStorage.getItem("inCartItems");
+cartItems = JSON.parse(cartItem);
+console.log(cartItems);
+  let cartItems = {
+    pizza
+ 
+}
 
-  cart.push({
-    ...item,
-    numberOfUnits: 1,
-  });
-  // updateCart();
-};
+localStorage.setItem("inCartItems", JSON.stringify(cartItems));
+localStorage.getItem("inCartItems");
+
+}
+setItems(pizzas);
+// var cart = [];
+// var addToCart = (name) => {
+//   var cartItem = localStorage.getItem("cartNumbers");
+// cartItems = JSON.parse(cartItem);
+// console.log(cartItems);
+// var inCart = document.querySelectorAll(".cart-items")
+//   // cart.push({
+//   //   ...name,
+//   //   numberOfUnits: 1,
+//   // });
+//   var cartContent = `<div class="pizza">
+//   <h5>Pizza</h5>
+//   <p class="mt-4 fs-4"></p>
+// </div>
+// <div class="toppings">
+//   <h5>Toppings</h5>
+//   <select class="mt-4 p-2 border rounded" name="toppings" id="toppings">
+//     <option value="">Sauce ksh <span>50</span></option>
+//     <option value="">Pepper ksh <span>100</span></option>
+//     <option value="">Tomato ksh <span>50</span></option>
+//     <option value="">Olives ksh <span>130</span></option>
+//     </select>
+//   </div>
+//   <div class="crust">
+//   <h5>Crust</h5>
+//   <select class="mt-4 p-2 border rounded" name="crust" id="crust">
+//     <option value="">Crusty ksh <span>150</span></option>
+//     <option value="">Stuffed ksh <span>100</span></option>
+//     <option value="">Crispy ksh <span>120</span></option>
+//     </select>
+//   </div>
+//   <div class="size">
+//   <h5>Size</h5>
+//   <select class="mt-4 p-2 border rounded" name="size" id="size">
+//     <option value="">Large ksh <span>1000</span></option>
+//     <option value="">Medium ksh <span>800</span></option>
+//     <option value="">Small ksh <span>500</span></option>
+//     </select>
+//   </div>
+//   <div class="quantity ">
+//   <h5>Quantity</h5>
+//   <input  min="1" max="20" class="mt-4 p-2 border rounded" type="number" name="quantity" id="quantity">
+// </div>
+// <div class="price">
+//   <h5>Price</h5>
+//   <p class="mt-4 fs-4" >Ksh <span>400</span></p>
+// </div>`;
+
+// document.getElementsByClassName("cart-items")[0].innerHTML += cartContent;
+//   cartItems.append(cartContent);
+
+//   // $('.cart-items').append(cartContent);
+//   // updateCart();
+// };
+// addToCart("veggie");
+
+// var updateCart=()=>{
+
+// };
+
+})
