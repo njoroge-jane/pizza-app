@@ -1,19 +1,20 @@
-html{
-margin: 0px;
-padding: 0px;
-text-transform: capitalize;
+html {
+  margin: 0px;
+  padding: 0px;
+  text-transform: capitalize;
 }
-#home-img  {
+#home-img {
   animation: float 3s linear infinite;
 }
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0rem);
   }
- 50% {
+  50% {
     transform: translateY(3rem);
   }
 }
-#order-button:hover{
+#order-button:hover {
   animation: float 2s linear infinite;
 }
