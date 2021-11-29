@@ -1,23 +1,23 @@
 var cart = [];
-window.addEventListener("DOMContentLoaded",function(){
-var addToCart = (pizza) => {
-  var cartItem = localStorage.getItem("inCartItems");
-cartItems = JSON.parse(cartItem);
-console.log(cartItems);
+window.addEventListener("DOMContentLoaded", function () {
+  var addToCart = (pizza) => {
+    localStorage.setItem("inCartItems", JSON.stringify(cartItems));
+    localStorage.getItem("inCartItems");
+    var cartItem = localStorage.getItem("inCartItems");
+    cartItems = JSON.parse(cartItem);
+    console.log(cartItems);
 
-for(i=0;i<cartItems.length;i++){
-  console.log(cartItems[i]);
-}
-var inCart = document.querySelectorAll(".cart-items")
-console.log(inCart)
-if(cartItems && inCart){
-  console.log("you");
-  inCart.innerHTML ="";
-  console.log(cartItems);
-  Object.values(cartItems).map(pizza =>{
-    console.log(pizza);
-    document.querySelectorAll(".cart-items").innerHTML +=
-    `<div class="pizza">
+    var inCart = document.querySelectorAll(".cart-items");
+    console.log(inCart);
+    if (cartItems && inCart) {
+      console.log("you");
+      inCart.innerHTML = "";
+      console.log(cartItems);
+      Object.values(cartItems).map((pizza) => {
+        console.log(pizza);
+        document.querySelectorAll(
+          ".cart-items"
+        ).innerHTML += `<div class="pizza">
   <h5>Pizza</h5>
   <p class="mt-4 fs-4">${pizza.name}</p>
 </div>
@@ -54,28 +54,34 @@ if(cartItems && inCart){
   <h5>Price</h5>
   <p class="mt-4 fs-4" >Ksh <span>400</span></p>
 </div>`;
-  });
-  console.log("heyy")
-}
-//   cart.push({
-//     ...name,
-//     numberOfUnits: 1,
-//   });
-//   var cartContent = 
+      });
+      console.log("heyy");
+    }
+    cart.push({
+      ...name,
+      numberOfUnits: 1,
+    });
+    var cartContent = (document.getElementsByClassName(
+      "cart-items"
+    )[0].innerHTML += cartContent);
+    cartItems.append(cartContent);
 
-// document.getElementsByClassName("cart-items")[0].innerHTML += cartContent;
-//   cartItems.append(cartContent);
+    $(".cart-items").append(cartContent);
+    updateCart();
+  };
 
-  // $('.cart-items').append(cartContent);
-  // updateCart();
-};
-
-var updateCart=()=>{
-
-};
-addToCart("hey")
+  var updateCart = () => {};
+  addToCart("mozarella");
 });
 
 $(document).ready(function () {
+  function totalPrice(toppings, crust, size, quantity, price) {
+    this.toppings = toppings;
+    this.crust = crust;
+    this.size = size;
+    this.quantity = quantity;
+    this.price = price;
+  }
 
-})
+  let toppings = $();
+});
