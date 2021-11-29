@@ -3,3 +3,17 @@ margin: 0px;
 padding: 0px;
 text-transform: capitalize;
 }
+#home-img  {
+  animation: float 3s linear infinite;
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0rem);
+  }
+ 50% {
+    transform: translateY(3rem);
+  }
+}
+#order-button:hover{
+  animation: float 2s linear infinite;
+}
