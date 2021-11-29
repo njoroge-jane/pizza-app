@@ -31,12 +31,12 @@
           <a class="nav-link text-dark" href="index.html">home</a>
           <a class="nav-link text-dark" href="index.html">order</a>
           <a class="nav-link text-dark" href="#contact">contact us</a>
-          <a class="nav-link link-dark" href="cart">cart [0]</a>
+          <a class="nav-link link-dark" href="cart">cart <span id="cart-no">0</span></a>
         </ul>
       </nav>
     </div>
 
-    <div class="cart d-flex justify-content-around mt-5 ">
+    <div class="cart-items d-flex justify-content-around mt-5 ">
       <div class="pizza">
       <h5>Pizza</h5>
       <p class="mt-4 fs-4">Pepperoni</p>
@@ -77,5 +77,8 @@
     </div>
     
     <button id="checkout" class="m-5 btn btn-danger position-absolute end-0">CHECKOUT</button>
+  <script src="./js/bootstrap.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="./js/cart.js"></script>
   </body>
 </html>
