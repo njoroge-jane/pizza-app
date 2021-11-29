@@ -31,54 +31,102 @@
           <a class="nav-link text-dark" href="index.html">home</a>
           <a class="nav-link text-dark" href="index.html">order</a>
           <a class="nav-link text-dark" href="#contact">contact us</a>
-          <a class="nav-link link-dark" href="cart">cart <span id="cart-no">0</span></a>
+          <a class="nav-link link-dark" href="cart"
+            >cart <span id="cart-no">0</span></a
+          >
         </ul>
       </nav>
     </div>
 
-    <div class="cart-items d-flex justify-content-around mt-5 ">
+    <div class="cart-items d-flex justify-content-around mt-5">
       <div class="pizza">
-      <h5>Pizza</h5>
-      <p class="mt-4 fs-4">Pepperoni</p>
-    </div>
-    <div class="toppings">
-      <h5>Toppings</h5>
-      <select class="mt-4 p-2 border rounded" name="toppings" id="toppings">
-        <option value="">Sauce ksh <span>50</span></option>
-        <option value="">Pepper ksh <span>100</span></option>
-        <option value="">Tomato ksh <span>50</span></option>
-        <option value="">Olives ksh <span>130</span></option>
+        <h5>Pizza</h5>
+        <p class="mt-4 fs-4">Pepperoni</p>
+      </div>
+      <div class="toppings">
+        <h5>Toppings</h5>
+        <select class="mt-4 p-2 border rounded" name="toppings" id="toppings">
+          <option value="50">Sauce ksh <span>50</span></option>
+          <option value="100">Pepper ksh <span>100</span></option>
+          <option value="50">Tomato ksh <span>50</span></option>
+          <option value="130">Olives ksh <span>130</span></option>
         </select>
       </div>
       <div class="crust">
-      <h5>Crust</h5>
-      <select class="mt-4 p-2 border rounded" name="crust" id="crust">
-        <option value="">Crusty ksh <span>150</span></option>
-        <option value="">Stuffed ksh <span>100</span></option>
-        <option value="">Crispy ksh <span>120</span></option>
+        <h5>Crust</h5>
+        <select class="mt-4 p-2 border rounded" name="crust" id="crust">
+          <option value="150">Crusty ksh <span>150</span></option>
+          <option value="100">Stuffed ksh <span>100</span></option>
+          <option value="120">Crispy ksh <span>120</span></option>
         </select>
       </div>
       <div class="size">
-      <h5>Size</h5>
-      <select class="mt-4 p-2 border rounded" name="size" id="size">
-        <option value="">Large ksh <span>1000</span></option>
-        <option value="">Medium ksh <span>800</span></option>
-        <option value="">Small ksh <span>500</span></option>
+        <h5>Size</h5>
+        <select class="mt-4 p-2 border rounded" name="size" id="size">
+          <option value="1000">Large ksh <span>1000</span></option>
+          <option value="800">Medium ksh <span>800</span></option>
+          <option value="500">Small ksh <span>500</span></option>
         </select>
       </div>
-      <div class="quantity ">
-      <h5>Quantity</h5>
-      <input  min="1" max="20" class="mt-4 p-2 border rounded" type="number" name="quantity" id="quantity">
+      <div class="quantity">
+        <h5>Quantity</h5>
+        <input
+          min="1"
+          max="20"
+          class="mt-4 p-2 border rounded"
+          type="number"
+          name="quantity"
+          id="quantity"
+        />
+      </div>
+      <div class="price">
+        <h5>Price</h5>
+        <p class="mt-4 fs-4">Ksh <span>1000</span></p>
+      </div>
     </div>
-    <div class="price">
-      <h5>Price</h5>
-      <p class="mt-4 fs-4" >Ksh <span>400</span></p>
-    </div>
-    </div>
-    
-    <button id="checkout" class="m-5 btn btn-danger position-absolute end-0">CHECKOUT</button>
-  <script src="./js/bootstrap.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="./js/cart.js"></script> 
+    <footer class="bg-light text-center mt-5">
+      <form class="container">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input
+            type="email"
+            class="form-control col-md-4"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+          />
+          <small id="emailHelp" class="form-text text-muted"
+            >We'll never share your email with anyone else.</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Password"
+          />
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Check us out</label
+          >
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <p class="mt-5">&copy 2021</p>
+    </footer>
+    <button id="checkout" class="m-5 btn btn-danger position-absolute end-0">
+      CHECKOUT
+    </button>
+    <script src="./js/bootstrap.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/cart.js"></script>
   </body>
 </html>
